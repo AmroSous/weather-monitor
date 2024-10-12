@@ -8,6 +8,6 @@ namespace WeatherMonitor.Services;
 
 public enum WeatherDataFormat
 {
-    JSON, 
-    XML
+    JSON = 1, 
+    XML = 2
 }

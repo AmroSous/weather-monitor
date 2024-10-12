@@ -8,5 +8,7 @@ namespace WeatherMonitor.Services.Interfaces;
 
 public interface IWeatherService
 {
-    void Analyze(string data, WeatherDataFormat weatherDataFormat);
+    List<IObserverBot> WeatherBots { get; }
+
+    void Analyze(string? data, WeatherDataFormat weatherDataFormat);
 }

@@ -33,6 +33,7 @@ public static class Program
 
         builder.Services.AddTransient<IWeatherDataParser, JsonWeatherDataParser>();
         builder.Services.AddTransient<IWeatherDataParser, XmlWeatherDataParser>();
+        builder.Services.AddTransient<WeatherDataParserResolver>(); 
 
         IHost host = builder.Build();
         host.Run();

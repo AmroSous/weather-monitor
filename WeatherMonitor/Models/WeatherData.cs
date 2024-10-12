@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WeatherMonitor.Models;
 
-public class WeatherData(string location, double temperature, double humidity)
+public class WeatherData
 {
-    public string Location { get; init; } = location;
+    public string Location { get; set; } = string.Empty;
 
-    public double Temperature { get; init; } = temperature;
+    public double Temperature { get; set; } = 0;
 
-    public double Humidity { get; init;} = humidity;
+    public double Humidity { get; set;} = 0;
 }

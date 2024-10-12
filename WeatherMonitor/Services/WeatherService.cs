@@ -13,17 +13,18 @@ public class WeatherService(
     IEnumerable<IObserverBot> bots,
     WeatherDataParserResolver weatherDataParserResolver) : IWeatherService
 {
-    private readonly List<IObserverBot> _bots = bots.ToList();
-
     private readonly WeatherDataParserResolver _weatherDataParserResolver = weatherDataParserResolver;
 
-    public void Analyze(string data, WeatherDataFormat weatherDataFormat)
+    public List<IObserverBot> WeatherBots => bots.ToList();
+
+    public void Analyze(string? data, WeatherDataFormat weatherDataFormat)
     {
+        if (data == null) throw new InvalidOperationException("Data is invalid.");
         var parser = _weatherDataParserResolver.GetParser(weatherDataFormat);
         var weatherData = parser.Parse(data) ?? throw new InvalidDataException("weather data format is invalid.");
         NotifyBots(weatherData);
     }
 
     private void NotifyBots(WeatherData data)
-        => _bots.ForEach(bot => { bot.Update(data); });
+        => WeatherBots.ForEach(bot => { bot.Update(data); });
 }

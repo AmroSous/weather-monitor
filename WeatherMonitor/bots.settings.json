@@ -1,19 +1,19 @@
 ﻿{
   "WeatherBots": {
-    "RainBot": {
-      "enabled": true,
-      "humidityThreshold": 70,
-      "message": "It looks like it's about to pour down!"
+    "RainBotConfig": {
+      "Enabled": true,
+      "HumidityThreshold": 70,
+      "Message": "It looks like it's about to pour down!"
     },
-    "SunBot": {
-      "enabled": true,
-      "temperatureThreshold": 30,
-      "message": "Wow, it's a scorcher out there!"
+    "SunBotConfig": {
+      "Enabled": true,
+      "TemperatureThreshold": 30,
+      "Message": "Wow, it's a scorcher out there!"
     },
-    "SnowBot": {
-      "enabled": false,
-      "temperatureThreshold": 0,
-      "message": "Brrr, it's getting chilly!"
+    "SnowBotConfig": {
+      "Enabled": true,
+      "TemperatureThreshold": 0,
+      "Message": "Brrr, it's getting chilly!"
     }
   }
 }

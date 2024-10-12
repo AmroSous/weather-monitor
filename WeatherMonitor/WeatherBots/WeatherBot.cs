@@ -28,4 +28,14 @@ public abstract class WeatherBot(
     protected abstract bool ShouldActivate(WeatherData weatherData);
 
     protected abstract void Activate(WeatherData weatherData);
+
+    public string GetConfigurationString()
+    {
+        return $"""
+            Type: {this.GetType().Name}
+                Enabled: {_botConfiguration.Enabled}
+                TemperatureThreshold: {_botConfiguration.TemperatureThreshold}
+                HumidityThreshold: {_botConfiguration.HumidityThreshold}
+            """;
+    }
 }

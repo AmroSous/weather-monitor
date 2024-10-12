@@ -15,4 +15,13 @@ public class BotConfiguration
     public double TemperatureThreshold { get; set; }
 
     public string Message { get; set; } = "";
+
+    public override string ToString()
+    {
+        return $"""
+            Enabled: {Enabled}
+            HumidityThreshold: {HumidityThreshold}
+            TemperatureThreshold: {TemperatureThreshold}
+            """;
+    }
 }
